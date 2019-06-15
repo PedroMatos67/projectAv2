@@ -41,12 +41,12 @@ page-feed {
         display: inline-block;
         width: 70px
     }
-    //Scrollbar color
+    
     .showAllOptions {
         padding: 5px;
         border-radius: 100px;
-        border: 2px solid #C6C6C6;
-        color: #C6C6C6;
+        border: 2px solid rgb(148, 205, 231);
+        color: rgb(158, 207, 223);
         padding-top: 10px;
     }
     ion-scroll.scroll-content {
@@ -64,33 +64,12 @@ page-feed {
         right: 20px
     }
 
-    //Hide scrollbar
+    
     ::-webkit-scrollbar,
     *::-webkit-scrollbar {
         display: none;
     }
 
-    // iPhone X
-    @media only screen 
-    and (device-width : 375px) 
-    and (device-height : 812px) 
-    and (-webkit-device-pixel-ratio : 3) { 
-        .scroll-content {
-            padding-top: 0px !important
-        }
-        .feed-header {
-            padding-top: 40px !important
-        }
-        .avatarPos {
-            background-size: cover;
-            background-position: center center;
-            height: 40px;
-            width: 40px;
-            border: 3px solid $eggshell;
-            border-radius: 100px;
-            position: absolute;
-            right: 20px;
-            top: 45px;
-        }
+  
     }
-}   
+  
