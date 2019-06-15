@@ -1,12 +1,12 @@
-import { Component } from "@angular/core";
+import { Component } from "./node_modules/@angular/core";
 import {
   IonicPage,
   NavController,
   NavParams,
   ViewController,
   ToastController
-} from "ionic-angular";
-import { Storage } from "@ionic/storage";
+} from "./node_modules/ionic-angular";
+import { Storage } from "./node_modules/@ionic/storage";
 
 @IonicPage()
 @Component({
