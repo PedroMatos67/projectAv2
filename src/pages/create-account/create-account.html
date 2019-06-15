@@ -1,0 +1,43 @@
+<ion-content padding class="registerBackground">
+  <!-- FEATURED TEXT -->
+  <div class="mg-top-20-percent">
+    <h2 class="eggshell bold center">
+      Cadastre-se
+    </h2>
+  </div>
+
+  <!-- INPUTS AND CTA -->
+  <div class="mg-top-40 customInputsPadding">
+    <form [formGroup]="form" (ngSubmit)="register()" class="form-bg-dark">
+      <!--NOME -->
+      <ion-item class="transparent-bg no-padding">
+        <ion-label stacked class="eggshell">Nome completo:</ion-label>
+        <ion-input formControlName="name" type="text" class="eggshell bold"></ion-input>
+      </ion-item>
+
+      <!-- EMAIL -->
+      <ion-item class="transparent-bg no-padding mg-top-20">
+        <ion-label stacked class="eggshell">Email:</ion-label>
+        <ion-input formControlName="email" type="email" class="eggshell bold"></ion-input>
+      </ion-item>
+
+      <!-- SENHA -->
+      <ion-item class="transparent-bg no-padding mg-top-20">
+        <ion-label stacked class="eggshell">Senha:</ion-label>
+        <ion-input formControlName="pass" type="password" class="eggshell bold"></ion-input>
+      </ion-item>
+
+      
+      <div class="registerCta mg-top-40">
+        <button class="eggshell bold no-padding btnRegister padding-top-5" ion-button clear [disabled]="!form.valid" type="submit">
+          Me cadastrar
+        </button>
+      </div>
+
+      <!-- confirmar-->
+      <div class="mg-top-40 center eggshell bold" (click)="haveAccount()">
+        Já tenho uma conta
+      </div>
+    </form>
+  </div>
+</ion-content>
