@@ -23,7 +23,7 @@ import { LoginPageModule } from '../pages/login/login.module';
 import { CreateAccountPageModule } from '../pages/create-account/create-account.module';
 import { TabsPageModule } from '../pages/abas/tabs.module';
 import { ProductPageModule } from '../pages/produtos/product.module';
-import { CartPageModule } from '../pages/cart/cart.module';
+import { CartPageModule } from '../pages/carrinho/cart.module';
 
 @NgModule({
   declarations: [
