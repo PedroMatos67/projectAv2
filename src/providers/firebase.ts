@@ -10,14 +10,14 @@ import "rxjs/add/operator/map";
 export class FirebaseProvider {
   constructor(private afs: AngularFirestore) {}
 
-  //Save on firestore
+  //Save user on firestore
   saveUser = data =>
     this.afs
       .collection("Users")
       .doc(data.$key)
       .update(data);
 
-  //Create  on firestore
+  //Create user on firestore
   postUser = data =>
     this.afs
       .collection("Users")

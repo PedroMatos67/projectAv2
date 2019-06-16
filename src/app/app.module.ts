@@ -21,9 +21,9 @@ import { IonicStorageModule } from '@ionic/storage';
 //Pages
 import { LoginPageModule } from '../pages/login/login.module';
 import { CreateAccountPageModule } from '../pages/create-account/create-account.module';
-import { TabsPageModule } from '../pages/abas/tabs.module';
+import { TabsPageModule } from '../pages/tabs/tabs.module';
 import { ProductPageModule } from '../pages/product/product.module';
-import { CartPageModule } from '../pages/carrinho/cart.module';
+import { CartPageModule } from '../pages/cart/cart.module';
 
 @NgModule({
   declarations: [
