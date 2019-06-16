@@ -1,5 +1,5 @@
-import { NgModule } from './node_modules/@angular/core';
-import { IonicPageModule } from './node_modules/ionic-angular';
+import { NgModule } from '@angular/core';
+import { IonicPageModule } from 'ionic-angular';
 import { ProductPage } from './product';
 
 @NgModule({

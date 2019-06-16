@@ -41,13 +41,13 @@ export class ProfilePage {
     this.getCurrentUser();
   }
 
- 
+  //Refresh page
   refresh(refresher) {
     refresher.complete();
     this.navCtrl.setRoot(this.navCtrl.getActive().component);
   }
 
-  
+  //Get current user data
   getCurrentUser() {
     this.storage.get('user_pizza_app')
       .then((user) => {
@@ -55,7 +55,7 @@ export class ProfilePage {
       })
   }
 
-  //Save 
+  //Save user
   save() {
     this.loadingProvider.present();
     this.firebaseProvider.saveUser(this.user)
@@ -64,7 +64,7 @@ export class ProfilePage {
       })
   }
 
-  
+  //Update user data on local storage
   getAndSaveCurrentUser(uid) {
     this.firebaseProvider.getCurrentUser(uid)
       .subscribe((res) => {
@@ -79,7 +79,7 @@ export class ProfilePage {
     this.app.getRootNav().setRoot('LoginPage');
   }
 
-  
+  //Image upload
   changeAvatar() {
     this.camera.getPicture({
       quality: 100,
@@ -92,7 +92,8 @@ export class ProfilePage {
     }).then(imageData => {
       let base64data = 'data:image/jpeg;base64,' + imageData;
       this.bigImg = base64data;
-            this.createThumbnail();
+      //Get image size
+      this.createThumbnail();
     }, error => {
     });
   }
@@ -104,7 +105,8 @@ export class ProfilePage {
     this.generateFromImage(this.bigImg, 1000, 1000, 100, data => {
       this.smallImg = data;
       let imgToUp = this.smallImg.split(',')[1];
-            this.storageImages.uploadPhoto(imgToUp, this.user.uid, 'Profile')
+      // console.log(imgToUp);
+      this.storageImages.uploadPhoto(imgToUp, this.user.uid, 'Profile')
         .then((savedPicture) => {
           let storageRef = firebase.storage().ref('Images/' + 'Profile' + '/' + this.user.uid);
             storageRef.getDownloadURL()
@@ -141,7 +143,8 @@ export class ProfilePage {
       canvas.height = height;
       var ctx = canvas.getContext("2d");
       ctx.drawImage(image, 0, 0, width, height);
-           var dataUrl = canvas.toDataURL('image/jpeg', quality);
+      // IMPORTANT: 'jpeg' NOT 'jpg'
+      var dataUrl = canvas.toDataURL('image/jpeg', quality);
       callback(dataUrl)
     }
     image.src = img;

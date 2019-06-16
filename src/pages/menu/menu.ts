@@ -26,30 +26,30 @@ export class MenuPage {
     this.modal = this.navParams.get('modal');
   }
 
-  
+  //Refresh page
   refresh(refresher) {
     refresher.complete();
     this.navCtrl.setRoot(this.navCtrl.getActive().component);
   }
 
- 
+  //Close modal
   close() {
     this.viewCtrl.dismiss()
   }
 
-  
+  //Open product page
   open(p) {
     let modal = this.modalCtrl.create('ProductPage', { product: p });
     modal.present();
   }
 
-  //ABRE CARRINHO
+  //Open cart
   openCart() {
     let modal = this.modalCtrl.create('CartPage', { modal: true });
     modal.present();
   }
 
-  
+  //List all produtcs to slides
   getProducts() {
     this.firebaseProvider.getProducts()
       .subscribe((res) => {
