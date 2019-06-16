@@ -4,7 +4,7 @@ $app-direction: ltr;
 @import "ionic.globals";
 
 $colors: (
-  primary:    #B90E42,
+  primary:    rgb(40, 161, 231),
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
@@ -12,9 +12,9 @@ $colors: (
 );
 
 //Pallet 
-$red: #B90E42;
+$red: rgb(40, 161, 231);
 $eggshell: #F7F5DD;
-$green: #1EBEB8;
+$green: rgb(52, 86, 238);
 $black: #363636;
 $gray: #C6C6C6;
 

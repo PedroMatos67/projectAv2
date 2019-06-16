@@ -39,11 +39,11 @@ export class LoginPage {
     this.loadingProvider.present().then(() =>{
       let data = this.form.value;
       this.authProvider.login(data)
-        //Success
+        
         .then((res) => {
           this.getAndSaveCurrentUser(res.user.uid);
         })
-        //Error
+        //Erro
         .catch(() => {
           this.loadingProvider.dismiss();
           const alert = this.alertCtrl.create({
@@ -67,9 +67,7 @@ export class LoginPage {
     })
   }
 
-  /**
-   * Seta o root da aplicação na página de criar conta
-   */
+  
   createAccount = () => this.navCtrl.push('CreateAccountPage');
 
 }

@@ -46,7 +46,7 @@ export class CreateAccountPage {
       let data = this.form.value;
       this.authProvider
         .register(data)
-        //Success
+        
         .then(res => {
           this.uid = res.user.uid;
           this.createUserOnFirestore();
@@ -85,8 +85,6 @@ export class CreateAccountPage {
     });
   }
 
-  /**
-   * Set the root back to login page
-   */
+
   haveAccount = () => this.navCtrl.pop();
 }

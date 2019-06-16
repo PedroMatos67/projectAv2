@@ -10,24 +10,24 @@ import "rxjs/add/operator/map";
 export class FirebaseProvider {
   constructor(private afs: AngularFirestore) {}
 
-  //Save user on firestore
+ 
   saveUser = data =>
     this.afs
       .collection("Users")
       .doc(data.$key)
       .update(data);
 
-  //Create user on firestore
+  
   postUser = data =>
     this.afs
       .collection("Users")
       .doc(data.uid)
       .set(data);
 
-  //Create order on firestore
+  
   postOrder = data => this.afs.collection("Orders").add(data);
 
-  //Get current user from uid
+ 
   getCurrentUser = uid => {
     const collection: AngularFirestoreCollection<any> = this.afs.collection(
       "Users",
@@ -44,7 +44,7 @@ export class FirebaseProvider {
     return collection$;
   };
 
-  //Get products
+  
   getProducts = () => {
     const collection: AngularFirestoreCollection<any> = this.afs.collection(
       "Products"

@@ -41,12 +41,12 @@ page-feed {
         display: inline-block;
         width: 70px
     }
-    //Scrollbar color
+    
     .showAllOptions {
         padding: 5px;
         border-radius: 100px;
         border: 2px solid #C6C6C6;
-        color: #C6C6C6;
+        color: rgb(175, 238, 233);
         padding-top: 10px;
     }
     ion-scroll.scroll-content {
@@ -64,13 +64,13 @@ page-feed {
         right: 20px
     }
 
-    //Hide scrollbar
+    
     ::-webkit-scrollbar,
     *::-webkit-scrollbar {
         display: none;
     }
 
-    // iPhone X
+    
     @media only screen 
     and (device-width : 375px) 
     and (device-height : 812px) 

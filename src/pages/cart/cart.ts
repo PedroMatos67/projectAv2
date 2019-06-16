@@ -30,18 +30,18 @@ export class CartPage {
     this.modal = this.navParams.get('modal');
   }
 
-  //Refresh page
+ 
   refresh(refresher) {
     refresher.complete();
     this.navCtrl.setRoot(this.navCtrl.getActive().component);
   }
 
-  //Close modal
+ 
   close() {
     this.viewCtrl.dismiss()
   }
 
-  //Get products added on cart
+  
   getCartData() {
     this.storage.get('cart_pizza_app')
       .then((res) => {
@@ -52,9 +52,9 @@ export class CartPage {
       })
   }
 
-  //Update amount
+  
   updateAmount() {
-    //Amount
+  
     let i = 0;
     for (i; i < this.cart.length; i++) {
       let price = parseFloat(this.cart[i].price);
@@ -62,18 +62,17 @@ export class CartPage {
     }
   }
 
-  //Convert to price format
+  
   toPrice(price) {
     price = parseFloat(price);
     return price.toFixed(2);
   }
 
-  //Remove item from cart
+  
   removeItem(i, item) {
     let index = i;
     this.cart.splice(index, 1);
-    // Update cart on storage
-    this.storage.set('cart_pizza_app', this.cart)
+        this.storage.set('cart_pizza_app', this.cart)
       .then((res) => {
         let alert = this.alertCtrl.create({
           title: 'Sucesso',
@@ -85,7 +84,7 @@ export class CartPage {
       })
   }
 
-  //Get current user data
+
   getCurrentUser() {
     this.storage.get('user_pizza_app')
       .then((user) => {
@@ -93,7 +92,7 @@ export class CartPage {
       })
   }
 
-  //Pay and create order
+  
   pay() {
     const prompt = this.alertCtrl.create({
       title: 'Finalizar',
@@ -107,7 +106,7 @@ export class CartPage {
         {
           text: 'Efetuar pedido',
           handler: data => {
-            //Crate order on firestore
+           
             this.loadingProvider.present();
             let order = {
               items: this.cart,
@@ -117,13 +116,13 @@ export class CartPage {
             this.firebaseProvider.postOrder(order)
               .then((res) => {
                 this.loadingProvider.dismiss();
-                //Clear storage cart
+                
                 this.storage.set('cart_pizza_app', null);
 
-                //Alert
+                
                 let alert = this.alertCtrl.create({
                   title: 'Obrigado',
-                  subTitle: 'Seu pedido já foi encaminhado!',
+                  subTitle: 'Seu pedido em breve estara pronto!',
                   buttons: ['Voltar']
                 });
                 alert.present();

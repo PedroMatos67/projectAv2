@@ -9,7 +9,7 @@ export class AuthProvider {
   ) {
   }
 
-  //Create user
+  
   register = (data) => this.afAuth.auth.createUserWithEmailAndPassword(data.email, data.pass);
 
   //Login

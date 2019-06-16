@@ -34,29 +34,29 @@ export class FeedPage {
     });
   }
 
-  //Refresh page
+  
   refresh(refresher) {
     refresher.complete();
     this.navCtrl.setRoot(this.navCtrl.getActive().component);
   }
 
-  //Open product page
+  
   open = product => this.modalCtrl.create("ProductPage", { product }).present();
 
-  //Open cart
+ 
   openCart = () => this.modalCtrl.create("CartPage", { modal: true }).present();
 
-  //Open products
+  
   openProducts = () =>
     this.modalCtrl.create("MenuPage", { modal: true }).present();
 
   ionViewDidLoad = () => {
-    //Build cart
+    
     this.storage.get("cart_pizza_app").then(res => {
       if (res) {
         this.items = res;
 
-        //Amount
+        
         let i = 0;
         for (i; i < this.items.length; i++) {
           let price = parseFloat(this.items[i].price);
@@ -66,14 +66,14 @@ export class FeedPage {
     });
   };
 
-  //Get current user data
+  
   getCurrentUser = () => {
     this.storage.get("user_pizza_app").then(user => {
       this.user = user;
     });
   };
 
-  //List all produtcs to slides
+  
   getProducts = () => {
     this.firebaseProvider.getProducts().subscribe(res => {
       this.loadingProvider.dismiss();
@@ -81,6 +81,6 @@ export class FeedPage {
     });
   }
 
-  //Convert to price format
+ 
   toPrice = price => parseFloat(price).toFixed(2);
 }

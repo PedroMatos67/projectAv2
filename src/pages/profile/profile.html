@@ -4,7 +4,7 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <!-- FEATURES TEXT -->
+  
   <div class="padding-20 padding-bottom-0">
     <img *ngIf="modal" src="assets/imgs/close-black.png" class="close" (click)="close()">
     <h2 class="black bold no-margin">
@@ -12,7 +12,7 @@
     </h2>
   </div>
 
-  <!-- CART ITEMS -->
+  
   <div class="padding-20">
     <!-- AVATAR -->
     <div class="center">
@@ -20,11 +20,11 @@
       <img *ngIf="user.avatar" class="avatarPos" [ngStyle]="{ 'background-image': 'url(' + user.avatar + ')'}" (click)="changeAvatar()">
     </div>
 
-    <!-- FORMS -->
+    
     <ion-grid class="no-padding mg-top-30 form-bg-light">
       <ion-row class="no-padding">
         <ion-col col-12>
-          <!-- NAME -->
+          <!-- NOME -->
           <ion-item class="transparent-bg no-padding">
             <ion-label stacked class="black">Nome</ion-label>
             <ion-input [(ngModel)]="user.name" type="text" class="black bold"></ion-input>
@@ -34,7 +34,7 @@
 
       <ion-row class="no-padding mg-top-20">
         <ion-col col-6>
-          <!-- CITY -->
+          <!-- CIDADE -->
           <ion-item class="transparent-bg no-padding">
             <ion-label stacked class="black">Cidade</ion-label>
             <ion-input [(ngModel)]="user.city" type="text" class="black bold"></ion-input>
@@ -42,7 +42,7 @@
         </ion-col>
 
         <ion-col col-6>
-          <!-- STATE -->
+          <!-- ESTADO -->
           <ion-item class="transparent-bg no-padding">
             <ion-label stacked class="black">Estado</ion-label>
             <ion-input [(ngModel)]="user.state" type="text" class="black bold"></ion-input>
@@ -52,7 +52,7 @@
 
       <ion-row class="no-padding mg-top-20">
         <ion-col col-12>
-          <!-- ADDRESS -->
+          <!-- ENDEREÇO -->
           <ion-item class="transparent-bg no-padding">
             <ion-label stacked class="black">Rua</ion-label>
             <ion-input [(ngModel)]="user.address" type="text" class="black bold"></ion-input>
@@ -62,7 +62,7 @@
 
       <ion-row class="no-padding mg-top-20">
         <ion-col col-6>
-          <!-- NEIGHBORHOOD -->
+          <!-- BAIRRO -->
           <ion-item class="transparent-bg no-padding">
             <ion-label stacked class="black">Bairro</ion-label>
             <ion-input [(ngModel)]="user.neighborhood" type="text" class="black bold"></ion-input>
@@ -70,7 +70,7 @@
         </ion-col>
 
         <ion-col col-6>
-          <!-- NUMBER -->
+          <!-- NUMERO -->
           <ion-item class="transparent-bg no-padding">
             <ion-label stacked class="black">Número</ion-label>
             <ion-input [(ngModel)]="user.number" type="number" class="black bold"></ion-input>
@@ -80,9 +80,9 @@
 
       <ion-row class="no-padding mg-top-20">
         <ion-col col-12>
-          <!-- COMPLEMENT -->
+          <!-- TELEFONE -->
           <ion-item class="transparent-bg no-padding">
-            <ion-label stacked class="black">Complemento</ion-label>
+            <ion-label stacked class="black">Telefone</ion-label>
             <ion-input [(ngModel)]="user.complement" type="text" class="black bold"></ion-input>
           </ion-item>
         </ion-col>
@@ -90,7 +90,7 @@
     </ion-grid>
   </div>
 
-  <!-- FAB BUTTON -->
+ 
   <ion-fab right bottom>
     <button ion-fab color="light" class="bgButton">
       <ion-icon class="eggshell" name="ios-more"></ion-icon>
